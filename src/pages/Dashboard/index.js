@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '~/services/api';
 
 import Background from '~/components/Background';
 import Appointment from '~/components/Appointment';
 
-import {Container, Title, List} from './styles';
+import { Container, Title, List } from './styles';
 
 export default function Dashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -44,7 +44,7 @@ export default function Dashboard() {
         <List
           data={appointments}
           keyExtractor={item => String(item.id)}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <Appointment onCancel={() => handleCancel(item.id)} data={item} />
           )}
         />
@@ -58,7 +58,7 @@ Dashboard.navigationOptions = {
   tabBarLabel: 'Agendamentos',
   // foi feito em forma de função o icone
   // pq a cor vem como parametro (tintColor) de dentro do react navigation
-  tabBarIcon: ({tintColor}) => (
+  tabBarIcon: ({ tintColor }) => (
     <Icon name="event" size={20} color={tintColor} />
   ),
 };
