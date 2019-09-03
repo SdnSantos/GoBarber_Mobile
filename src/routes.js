@@ -61,6 +61,8 @@ export default (isSigned = false) =>
             Profile,
           },
           {
+            // toda vez que sair de uma rota vai resetar
+            resetOnBlur: true,
             tabBarOptions: {
               // para o teclado abrir por cima da tabBar
               keyboardHidesTabBar: true,
